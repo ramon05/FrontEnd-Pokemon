@@ -1,21 +1,9 @@
 <template>
   <div id="app" class="mb-3">
-    **<img  alt="logo pokemones" src="@/assets/pokeball.jpg">**
-   <Pokemon/>
+    <router-link to="/">Home</router-link>
+    <router-view/>
   </div>
 </template>
-
-<script>
-  import Pokemon from './components/Pokemon'
-
-
-export default {
-  name: 'App',
-  components:{
-    Pokemon
-  }
-}
-</script>
 
 <style>
 #app {
