@@ -13,7 +13,7 @@
                 <b-link :to="'/DetallePokemon'">
                     <b-card class="ml-3 mb-3 mr-3" v-if="!Name == ''" >
                         <b-card-text>{{pokemon.name}}</b-card-text>
-                        <b-button href="#" variant="primary" v-on:click="obtenerid(pokemon.url)">Descargar</b-button>
+                        <b-button href="#" variant="primary" v-on:click="obtenerid(pokemon.url)">Detalle</b-button>
                     </b-card>
                 </b-link>   
             </b-col>
@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
-
 export default {
     
     name: 'Pokemon',
@@ -58,7 +56,7 @@ export default {
         },
 
         obtenerid(dato){
-            let datos = dato.substr(26);
+            const datos = dato.substr(26);
             this.$router.push({name:'DetallePokemon', params: {id: datos}})
         }
 
@@ -67,7 +65,6 @@ export default {
         searchPokemones: function () {
            return this.pokemones.filter((item) => item.name.includes(this.Name));
         }, 
-      ...mapState(['id'])
     },
 }
 </script>

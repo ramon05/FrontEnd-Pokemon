@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    **<img  alt="logo pokemones" src="@/assets/pokeball.jpg">**
+    <img :src="require('@/assets/pokeball.jpg')">
    <Pokemon/>
   </div>
 </template>
