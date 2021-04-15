@@ -1,11 +1,11 @@
 <template>
     <div  class="d-flex align-items-center justify-content-center">
       <b-card
-        style="max-width: 20rem;"
+        style="max-width: 12rem;"
         v-bind:img-src="pokemon.sprites.other.dream_world.front_default"
         img-alt="Image"
         img-top
-        class="mb-2"
+        class="mb-2 w-50 h-50"
        >
         <template #header>
               <b-card-title>{{pokemon.name}}</b-card-title>

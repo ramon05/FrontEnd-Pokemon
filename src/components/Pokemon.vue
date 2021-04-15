@@ -10,12 +10,10 @@
         
         <b-row class="mt-5">
             <b-col cols="12" md="3" v-for="(pokemon, index) in searchPokemones" :key="index">
-                <b-link :to="'/DetallePokemon'">
-                    <b-card class="ml-3 mb-3 mr-3" v-if="!Name == ''" >
-                        <b-card-text>{{pokemon.name}}</b-card-text>
-                        <b-button href="#" variant="primary" v-on:click="obtenerid(pokemon.url)">Detalle</b-button>
-                    </b-card>
-                </b-link>   
+                <b-card class="ml-3 mb-3 mr-3" v-if="!Name == ''" >
+                    <b-card-text>{{pokemon.name}}</b-card-text>
+                    <b-button href="#" variant="primary" v-on:click="obtenerid(pokemon.url)">Detalle</b-button>
+                </b-card>
             </b-col>
         </b-row>
     </div>
