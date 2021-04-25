@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img :src="require('@/assets/pokeball.jpg')">
-   <Pokemon/>
+    <img :src="require('@/assets/pokeball3.png')">
+   <Pokemon />
   </div>
 </template>
 
@@ -14,5 +14,5 @@ export default {
   components: {
     Pokemon
   }
-}
+ }
 </script>

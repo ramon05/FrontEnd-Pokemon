@@ -21,48 +21,38 @@
 
 <script>
 export default {
-    
     name: 'Pokemon',
 
-    data() {
-        return {
-            pokemones: [],
-            Name: "",
-        }
-    },
-
     created() {
-        this.getPokemones();
+        this.$store.dispatch('getPokemones');
     },
 
     methods: {
-        async getPokemones(){
-           try {
-
-            const entradas = await this.axios.get('Pokemon')
-            await entradas.data.results.forEach(element => {
-                let item = {}
-                item.name = element.name;
-                item.url = element.url;
-                this.pokemones.push(item)
-            });
-
-           } catch (error) {
-
-               console.log(error);
-           }
-        },
-
         obtenerid(dato){
             const datos = dato.substr(26);
-            this.$router.push({name:'DetallePokemon', params: {id: datos}})
-        }
-
+            this.$router.push({name:'DetallePokemon', params: {id: datos}});
+        },
     },
     computed:{
+        pokemones:{
+            get: function() {
+                return this.$store.getters['getPokemones'];
+            },
+        },
+         Name:{
+            // getter
+            get: function () {
+                return this.$store.state.Name;
+            },
+            // setter
+            set: function (newValue) {
+                this.$store.state.Name = newValue;
+            }
+        },
+
         searchPokemones: function () {
-           return this.pokemones.filter((item) => item.name.includes(this.Name));
-        }, 
+          return this.pokemones.filter((item) => item.name.includes(this.Name));
+        },
     },
 }
 </script>
